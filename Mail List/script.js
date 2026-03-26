@@ -24,6 +24,23 @@ let listaDelleMail = ['examplemail1@gmail.com',
 //3. Chiedo all’utente di inserire la sua email tramite prompt.
 let mail = prompt("Inserisci l'indirizzo email");
 
+//4. Verifico che la posta in arrivo abbia il formato corretto.
+let estensioniValide = [".com", ".it", ".org", ".net", ".io"];
+let estensione = mail.slice(-4);
+let estensioneLunga = mail.slice(-3); 
+
+let estensioneCorretta = false;
+
+for (let i = 0; i < estensioniValide.length; i++) {
+    if (estensione === estensioniValide[i] || estensioneLunga === estensioniValide[i]) {
+        estensioneCorretta = true;
+    }
+}
+if(estensioneCorretta===false){
+    console.log("❌L'indirizzo email inserito non è corretto❌"); 
+} else{
+
+
 //4. Imposto un ciclo for per controllare se l’email inserita è presente nella lista.
 for (i = 0; i < listaDelleMail.length; i++) {
     if (mail === listaDelleMail[i]) {
@@ -35,5 +52,6 @@ for (i = 0; i < listaDelleMail.length; i++) {
 if (trovato === true) {
     console.log(`✅Utente con Mail ${mail} Sei tra gli invitati✅`);
 } else {
-    console.log(`❌Utente con Mail ${mail} purtroppo non sei invitato❌`);
+    console.log(`⛔️Utente con Mail ${mail} purtroppo non sei invitato⛔️`);
+}
 }
