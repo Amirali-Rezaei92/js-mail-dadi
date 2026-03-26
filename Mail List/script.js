@@ -28,15 +28,20 @@ let mail = prompt("Inserisci l'indirizzo email");
 let estensioniValide = [".com", ".it", ".org", ".net", ".io"];
 let estensione = mail.slice(-4);
 let estensioneLunga = mail.slice(-3); 
-
 let estensioneCorretta = false;
+let haSpazi = false;
 
 for (let i = 0; i < estensioniValide.length; i++) {
     if (estensione === estensioniValide[i] || estensioneLunga === estensioniValide[i]) {
         estensioneCorretta = true;
     }
 }
-if(estensioneCorretta===false){
+for (let i = 0; i < mail.length; i++) {
+    if (mail[i] === " ") {
+        haSpazi = true;
+    }    
+}
+if(estensioneCorretta===false || haSpazi===true){
     console.log("❌L'indirizzo email inserito non è corretto❌"); 
 } else{
 
