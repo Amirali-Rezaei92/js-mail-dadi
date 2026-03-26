@@ -4,8 +4,6 @@
 //per determinare chi ha ottenuto il punteggio più alto e quindi il vincitore.
 
 
-//Gioco dei dadi
-
 //1. Genero un numero casuale da 1 a 6 per il giocatore.
 let numeroGiocatore = Math.floor(Math.random() * 6) + 1;
 //2. Genero un numero casuale da 1 a 6 per il computer.
