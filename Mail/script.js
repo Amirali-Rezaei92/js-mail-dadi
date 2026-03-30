@@ -25,38 +25,27 @@ let listaDelleMail = ['examplemail1@gmail.com',
 let mail = prompt("Inserisci l'indirizzo email");
 
 //4. Verifico che la posta in arrivo abbia il formato corretto.
-let estensioniValide = [".com", ".it", ".org", ".net", ".io"];
-let estensione = mail.slice(-4);
-let estensioneLunga = mail.slice(-3); 
-let estensioneCorretta = false;
-let haSpazi = false;
+let partiMail = mail.split('@');
+if (partiMail.length !== 2 || partiMail[0].length === 0 || partiMail[1].length === 0) {
+    alert("Indirizzo email non valido. Per favore, inserisci un indirizzo email corretto.");
+} else {
 
-for (let i = 0; i < estensioniValide.length; i++) {
-    if (estensione === estensioniValide[i] || estensioneLunga === estensioniValide[i]) {
-        estensioneCorretta = true;
-    }
-}
-for (let i = 0; i < mail.length; i++) {
-    if (mail[i] === " ") {
-        haSpazi = true;
-    }    
-}
-if(estensioneCorretta===false || haSpazi===true){
-    console.log("❌L'indirizzo email inserito non è corretto❌"); 
-} else{
-
-
-//4. Imposto un ciclo for per controllare se l’email inserita è presente nella lista.
+//5. Imposto un ciclo for per controllare se l’email inserita è presente nella lista.
 for (i = 0; i < listaDelleMail.length; i++) {
     if (mail === listaDelleMail[i]) {
         trovato = true;
     }
 }
-//5. Se l’email è presente, imposto trovato = true; altrimenti rimane false e Scrivo una condizione if: se trovato è true, 
+//6. Se l’email è presente, imposto trovato = true; altrimenti rimane false e Scrivo una condizione if: se trovato è true, 
 // stampo un messaggio che dice all’utente che può entrare; altrimenti stampo che non può entrare.
 if (trovato === true) {
-    console.log(`✅Utente con Mail ${mail} Sei tra gli invitati✅`);
+    alert(`✅Utente con Mail ${mail} Sei tra gli invitati✅`);
 } else {
-    console.log(`⛔️Utente con Mail ${mail} purtroppo non sei invitato⛔️`);
+    alert(`⛔️Utente con Mail ${mail} purtroppo non sei invitato⛔️`);
 }
 }
+
+
+
+
+

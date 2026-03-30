@@ -3,7 +3,7 @@
 // e uno per il computer. Successivamente confronta i due risultati
 //per determinare chi ha ottenuto il punteggio più alto e quindi il vincitore.
 
-
+const start = alert('Seletta OK per Iniziare!');
 //1. Genero un numero casuale da 1 a 6 per il giocatore.
 let numeroGiocatore = Math.floor(Math.random() * 6) + 1;
 //2. Genero un numero casuale da 1 a 6 per il computer.
@@ -15,13 +15,19 @@ console.log(`Numero di Giocatore è: ${numeroGiocatore} `);
 
 
 //4. Confronto i due numeri:
-if(numeroGiocatore>numeroComputer){
-    console.log(`Giocatore ha vinto🙆‍♂️`); //- Se il numero del giocatore è più alto, vince il giocatore.
-}else if(numeroGiocatore<numeroComputer){//- Se il numero del computer è più alto, vince il computer.
-    console.log(`Computer ha vinto 🖥️`);  
+if (numeroGiocatore > numeroComputer) {
+    alert(`Numero di computer è: ${numeroComputer} 
+           Numero di Giocatore è: ${numeroGiocatore}
+           Giocatore ha vinto🙆‍♂️`); //- Se il numero del giocatore è più alto, vince il giocatore.
+} else if (numeroGiocatore < numeroComputer) {//- Se il numero del computer è più alto, vince il computer.
+    alert(`Numero di computer è: ${numeroComputer} 
+           Numero di Giocatore è: ${numeroGiocatore}
+           Computer ha vinto 🖥️`);
 } else {
-    console.log(`PARI`);//- Se i numeri sono uguali, la partita finisce in pareggio.
-    
+    alert(`Numero di computer è: ${numeroComputer} 
+           Numero di Giocatore è: ${numeroGiocatore}
+           PARI`);//- Se i numeri sono uguali, la partita finisce in pareggio.
+
 }
 
 
